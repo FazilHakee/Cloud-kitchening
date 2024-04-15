@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Payment</title>
+<style>
+    /* Your CSS styles here */
+</style>
+</head>
+<body>
+    <div class="container">
+        <!-- Your payment page content -->
+        <h2>Payment Page</h2>
+        <h3>Cart Items</h3>
+        <ul id="cartItems"></ul>
+    </div>
+
+    <!-- Your JavaScript -->
+    <script>
+        // Function to display cart items on payment page
+        function displayCartItems() {
+            var cartList = document.getElementById("cartItems");
+            var cartItems = JSON.parse(localStorage.getItem('cart')) || {};
+
+            // Add each item to the cart list
+            for (var item in cartItems) {
+                var listItem = document.createElement("li");
+                listItem.textContent = item + " - Quantity: " + cartItems[item];
+                cartList.appendChild(listItem);
+            }
+        }
+
+        // Initial cart display on payment page
+        displayCartItems();
+    </script>
+</body>
+</html>
