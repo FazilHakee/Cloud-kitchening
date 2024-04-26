@@ -1,23 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sign Up Page</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            
-            background-size: cover;
-            background-position: center;
-            height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-		#background-video {
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Food Delivery Signup</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f5f5f5;
+    }
+    #background-video {
             position: fixed;
             right: 0;
             bottom: 0;
@@ -29,83 +23,77 @@
             background-size: cover;
         }
 
+    .container {
+      max-width: 400px;
+      margin: 50px auto;
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
 
-        .container {
-            background-color: mintcream;
-            padding: 20px;
-            border-radius: 5px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            width: 300px;
-            margin: 50px auto;
-            text-align: center;
-        }
+    h2 {
+      text-align: center;
+    }
 
-        h2 {
-            margin-bottom: 10px;
-        }
+    label {
+      display: block;
+      margin-bottom: 5px;
+    }
 
-        #logo {
-            width: 100px;
-            margin-bottom: -10px;
-        }
+    input[type="text"],
+    input[type="email"],
+    input[type="password"] {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+    }
 
-        input[type="text"],
-        input[type="email"],
-        input[type="password"],
-        button {
-            width: 100%;
-            padding: 10px;
-            margin: 5px 0;
-            border: 1px solid #ccc;
-            border-radius: 10px;
-            box-sizing: border-box;
-        }
+    input[type="submit"] {
+      width: 100%;
+      padding: 10px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
 
-        button {
-            background-color: DimGrey;
-            color: white;
-            cursor: pointer;
-        }
+    input[type="submit"]:hover {
+      background-color: #45a049;
+    }
 
-        button:hover {
-            background-color: #45a049;
-        }
-
-        p {
-            text-align: center;
-        }
-
-        a {
-            color: blue;
-            text-decoration: underline;
-        }
-    </style>
+    .text-center {
+      text-align: center;
+    }
+  
+  </style>
 </head>
 <body>
-     <video autoplay loop muted id="background-video">
-        <source src="pv3.mp4" type="video/mp4">
+    <video autoplay loop muted id="background-video">
+        <source src="pv2.mp4" type="video/mp4">
         Your browser does not support the video tag.
     </video>
-    <div class="container">
-        <img src="projlogo.png" alt="Logo" id="logo">
-        <h2>Sign Up</h2>
-        <form id="signupForm" onsubmit="return false;">
-            <input type="text" id="fullname" placeholder="Full Name" required>
-            <input type="email" id="email" placeholder="Email or Phone Number" required>
-            <input type="password" id="password" placeholder="Password" required>
-            <button type="submit" onclick="signup()">Sign Up</button>
-        </form>
-        <p>Already have an account? <a href="proj login page.html">Login</a></p>
-    </div>
+  <div class="container">
+    <h2>Sign Up for Food Delivery</h2>
+    <form action="http://localhost:8000/usersinsert" method="post">
+      <label for="username">Username:</label>
+      <input type="text" id="username" name="username" required>
 
-    <!-- JavaScript code for sign-up functionality -->
-    <script>
-        function signup() {
-            var fullname = document.getElementById('fullname').value;
-            var email = document.getElementById('email').value;
-            var password = document.getElementById('password').value;
-            // Add your logic to handle sign-up process
-        }
-    </script>
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required>
+
+      <label for="password">Password:</label>
+      <input type="password" id="password" name="password" required>
+        <input type="submit" value="Sign me up!">
+
+      
+      <p class="text-center">Already have an account? <a href="proj login page.html">Log In</a></p>
+    </form>
+  </div>
+
 </body>
 </html>
